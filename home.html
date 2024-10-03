@@ -13,54 +13,63 @@
         <form action="" id="buyer" >
             <div class="mb-3 mt-3">
                 <label for="bname" class="form-label">Buyer's Name:</label>
-                <input type="text" class="form-control"  name="buyer_name" required>
+                <input type="text" class="form-control"  id="buyername" required>
             </div>
             <div class="mb-3">
                 <label for="phn" class="form-label">Phone:</label>
-                <input type="tel" class="form-control" name="buyer_phone" required>
+                <input type="tel" class="form-control" id="buyerphone" required>
             </div>
             <div class="mb-3">
-               <select class="form-select" aria-label="Default select example">
+               <select class="form-select" id="select">
                     <option selected>None</option>
-                    <option value="1">Australia</option>
-                    <option value="2">UK</option>
-                    <option value="3">USA</option>
+                    <option value="Australia">Australia</option>
+                    <option value="UK">UK</option>
+                    <option value="USA">USA</option>
                 </select>
             </div> 
         </form>
         <!-- Buyer form ends here -->
+
+       <!-- product form starts from here -->
+       <form action="" class="product">
+        <div class="form-group">
+            <label for="pname">Product Name</label>
+            <input type="text" class="form-control" id="pname">
+        </div>
+        <div class="form-group">
+            <label for="description">Description</label>
+            <textarea class="form-control" id="description" rows="3"></textarea>
+        </div>
+        <div class="form-group">
+            <label for="quantity">Quantity</label>
+            <input type="number" class="form-control" id="quantity">
+        </div>    
+        <div class="form-group">
+            <label for="price">Price</label>
+            <input type="number" class="form-control" id="price">
+        </div>
+        <div class="form-group">
+            <label for="rate">Rate</label>
+            <input type="number" class="form-control" id="rate">
+        </div>
+        <div class="form-group">
+            <label for="amount">Amount</label>
+            <input type="number" class="form-control" id="amount">
+        </div>
+    </form>
+    <!-- product form ends here -->
+
+
+
     </div>
     <!-- container ends here -->
 
-    <div class="container">
-        <!-- Buyer form starts from here -->
-        <form action="" id="product" >
-            <div class="mb-3 mt-3">
-                <label for="bname" class="form-label">Buyer's Name:</label>
-                <input type="text" class="form-control"  name="buyer_name" required>
-            </div>
-            <div class="mb-3">
-                <label for="phn" class="form-label">Phone:</label>
-                <input type="tel" class="form-control" name="buyer_phone" required>
-            </div>
-            <div class="mb-3">
-               <select class="form-select" aria-label="Default select example">
-                    <option selected>None</option>
-                    <option value="1">Australia</option>
-                    <option value="2">UK</option>
-                    <option value="3">USA</option>
-                </select>
-            </div> 
-        </form>
-        <!-- Buyer form ends here -->
-    </div>
-    <!-- container ends here -->
+   
 
     <!-- puls and submit button -->
-    <div class="container d-flex">
+    <div class="container d-flex mt-3">
         <button type="submit" class="btn btn-secondary m-1" id= "addition">+</button>
-        <button type="submit" class="btn btn-success m-1" onclick = "submission()">Submit</button>
-
+        <button type="submit" class="btn btn-success m-1" id="submission">Submit</button>
     </div>
       
 
@@ -72,3 +81,11 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
 </body>
 </html>
+
+
+
+
+
+
+
+
