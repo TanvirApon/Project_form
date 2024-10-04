@@ -1,15 +1,15 @@
 console.log("Javascript file added");
 
-var buyer=[];
+  var submit = document.getElementById("submission");
 
-var product=[];
+submit.addEventListener("click", () => {
 
-var submit = document.getElementById("submission");
+  // var buyer = [];
 
-submit.addEventListener("click",()=>{
+  var product = [];
 
-  var buyerName = document.getElementById("buyername").value;
-  var buyerPhone = document.getElementById("buyerphone").value;
+  var buyerName = document.getElementById("buyer_name").value;
+  var buyerPhone = document.getElementById("buyer_phone").value;
   var area = document.getElementById("select").value;
 
   var buyerDetails = {
@@ -18,8 +18,7 @@ submit.addEventListener("click",()=>{
     "Area": area
   }
 
-  buyer.push(buyerDetails);
-  console.log(buyer)
+  console.log(buyerDetails);
 
 
 
@@ -29,15 +28,15 @@ submit.addEventListener("click",()=>{
   var price = document.getElementById("price").value;
   var rate = document.getElementById("rate").value;
   var amount = document.getElementById("amount").value;
-  
+
 
   var productDetails = {
     "Product's name": productName,
     "Description": description,
     "Quantity": quantity,
-    "Price" : price,
-    "Rate" : rate,
-    "Amount" : amount
+    "Price": price,
+    "Rate": rate,
+    "Amount": amount
   }
 
   product.push(productDetails);
