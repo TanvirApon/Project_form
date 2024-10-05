@@ -11,97 +11,79 @@
 </head>
 
 <body>
-    <div class="container">
+
+    <div class="container mb-5 border">
         <!-- Buyer form starts from here -->
-        <form action="" id="buyer">
-            <div class="mb-3 mt-3">
-                <label for="bname" class="form-label">Buyer's Name:</label>
-                <input type="text" class="form-control" id="buyer_name" required>
-            </div>
-            <div class="mb-3">
-                <label for="phn" class="form-label">Phone:</label>
-                <input type="tel" class="form-control" id="buyer_phone" required>
-            </div>
-            <div class="mb-3">
-                <select class="form-select" id="select">
-                    <option selected>None</option>
-                    <option value="Australia">Australia</option>
-                    <option value="UK">UK</option>
-                    <option value="USA">USA</option>
-                </select>
-            </div>
-        </form>
-        <!-- Buyer form ends here -->
+            <form action="" id="buyer" >
+                <div class="mb-3 mt-3">
+                    <label for="bname" class="form-label">Buyer's Name : </label>
+                    <input type="text" class="form-control" id="buyer_name" required>
+                </div>
+                <div class="mb-3">
+                    <label for="phn" class="form-label">Phone : </label>
+                    <input type="tel" class="form-control" id="buyer_phone" required>
+                </div>
+                <div class="mb-3">
+                    <label for="bname" class="form-label">Country :</label>
+                    <select class="form-select" id="select">
+                        <option selected>None</option>
+                        <option value="Australia">Australia</option>
+                        <option value="UK">UK</option>
+                        <option value="USA">USA</option>
+                    </select>
+                </div>
+            </form>
+         <!-- Buyer form ends here -->
 
+        <!-- product will dynamically added from the js part -->
+
+         <!-- commented section code -->
         <!-- product form starts from here -->
-        <div class="product">
-            <div class="form-group">
+        <!-- <div class="product">
+            <div class="form-group mb-3 ">
                 <label for="pname">Product Name</label>
                 <input type="text" class="form-control" id="pname">
             </div>
-            <div class="form-group">
+            <div class="form-group mb-3 ">
                 <label for="description">Description</label>
                 <textarea class="form-control" id="description" rows="3"></textarea>
             </div>
-            <div class="form-group">
+            <div class="form-group mb-3 ">
                 <label for="quantity">Quantity</label>
                 <input type="number" class="form-control" id="quantity">
             </div>
-            <div class="form-group">
+            <div class="form-group mb-3 ">
                 <label for="price">Price</label>
                 <input type="number" class="form-control" id="price">
             </div>
-            <div class="form-group">
+            <div class="form-group mb-3">
                 <label for="rate">Rate</label>
                 <input type="number" class="form-control" id="rate">
             </div>
-            <div class="form-group">
+            <div class="form-group mb-3 mt-3">
                 <label for="amount">Amount</label>
                 <input type="number" class="form-control" id="amount">
             </div>
-        </div>
-
-        <div class="product">
-            <div class="form-group">
-                <label for="pname">Product Name</label>
-                <input type="text" class="form-control" id="pname">
-            </div>
-            <div class="form-group">
-                <label for="description">Description</label>
-                <textarea class="form-control" id="description" rows="3"></textarea>
-            </div>
-            <div class="form-group">
-                <label for="quantity">Quantity</label>
-                <input type="number" class="form-control" id="quantity">
-            </div>
-            <div class="form-group">
-                <label for="price">Price</label>
-                <input type="number" class="form-control" id="price">
-            </div>
-            <div class="form-group">
-                <label for="rate">Rate</label>
-                <input type="number" class="form-control" id="rate">
-            </div>
-            <div class="form-group">
-                <label for="amount">Amount</label>
-                <input type="number" class="form-control" id="amount">
-            </div>
-        </div>
+        </div> -->
         <!-- product form ends here -->
-
 
 
     </div>
     <!-- container ends here -->
 
+    <div class="container ">
+        <!-- product starts from here -->
+        <div class="product border p-3" id="product">
+        </div>
+        <!-- product ends here -->
+    </div>
+    <!-- product form ends here -->
 
-
-    <!-- puls and submit button -->
+    <!-- plus and submit button -->
     <div class="container d-flex mt-3">
         <button type="submit" class="btn btn-secondary m-1" id="addition">+</button>
         <button type="submit" class="btn btn-success m-1" id="submission">Submit</button>
     </div>
-
 
 
     <script src="app.js"></script>
