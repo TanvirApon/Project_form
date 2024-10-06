@@ -3,9 +3,6 @@ console.log("Javascript file added");
  var submit = document.getElementById("submission");
  var add  = document.getElementById("addition");
 //  var close = document.getElementById("close");
-function closenav() {
-  showProduct.removeChild(newDiv);
-}
 
 // show product div
 add.addEventListener( "click",()=>{
@@ -14,8 +11,9 @@ add.addEventListener( "click",()=>{
   const newDiv = document.createElement("div");
 
    newDiv.innerHTML =  `
-              <div class="d-flex justify-content-end" onclick="closenav();">
-               <button type="button" class="btn-close" aria-label="Close"></button>
+            <div class="border p-3 mb-3 ">
+              <div class="d-flex justify-content-end" >
+               <button type="button" class="btn-close bg-danger text-light" aria-label="Close"></button>
               </div> 
                <div class="mb-3">
                   <label class="mb-2">Product Name : </label>
@@ -41,13 +39,19 @@ add.addEventListener( "click",()=>{
                   <label class="mb-2">Amount : </label>
                   <input type="number" class="form-control" id="amount">
               </div>
+            </div>
             `;
 
    showProduct.appendChild(newDiv);
 
+   const close = newDiv.querySelector(".btn-close");
 
- 
-})
+   close.addEventListener("click",()=>{
+      newDiv.remove();
+
+   });
+
+});
 
 // submit button on click event listener
 submit.addEventListener("click", () => {
