@@ -12,7 +12,10 @@ console.log("Javascript file added");
 // show product div
 add.addEventListener( "click",()=>{
  
-   var showProduct = document.getElementById("product");
+   var showProduct = document.getElementById("products");
+   var productTemplate = document.querySelector(".product.d-none").cloneNode(true);
+   productTemplate.classList.remove("d-none");
+   productTemplate.classList.add("d-block");
    var newDiv = document.createElement("div");
    
    newDiv.innerHTML =  `
@@ -46,12 +49,13 @@ add.addEventListener( "click",()=>{
               </div>
             </div>`;
 
-   showProduct.appendChild(newDiv);
+  //  showProduct.appendChild(newDiv);
+   showProduct.appendChild(productTemplate);
 
-   const close = newDiv.querySelector(".btn-close");
+   const close = productTemplate.querySelector(".btn-close");
 
    close.addEventListener("click",()=>{
-      newDiv.remove();
+    productTemplate.remove();
 
    });
 
@@ -78,7 +82,7 @@ submit.addEventListener("click", () => {
   console.log(buyerDetails);
 
 
-  var productInfo = document.querySelectorAll(".product");
+  var productInfo = document.querySelectorAll(".product.d-block");
   console.log("Product Information: ", productInfo);
 
   for (var i = 1; i < productInfo.length; i++) {

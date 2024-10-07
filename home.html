@@ -14,30 +14,30 @@
 
     <div class="container mb-3 mt-3 border">
         <!-- Buyer form starts from here -->
-            <form action="" id="buyer" >
-                <div class="mb-3 mt-3">
-                    <label for="bname" class="form-label">Buyer's Name : </label>
-                    <input type="text" class="form-control" id="buyer_name" required>
-                </div>
-                <div class="mb-3">
-                    <label for="phn" class="form-label">Phone : </label>
-                    <input type="tel" class="form-control" id="buyer_phone" required>
-                </div>
-                <div class="mb-3">
-                    <label for="bname" class="form-label">Country :</label>
-                    <select class="form-select" id="select">
-                        <option selected>None</option>
-                        <option value="Australia">Australia</option>
-                        <option value="UK">UK</option>
-                        <option value="USA">USA</option>
-                    </select>
-                </div>
-            </form>
-         <!-- Buyer form ends here -->
+        <form action="" id="buyer">
+            <div class="mb-3 mt-3">
+                <label for="bname" class="form-label">Buyer's Name : </label>
+                <input type="text" class="form-control" id="buyer_name" required>
+            </div>
+            <div class="mb-3">
+                <label for="phn" class="form-label">Phone : </label>
+                <input type="tel" class="form-control" id="buyer_phone" required>
+            </div>
+            <div class="mb-3">
+                <label for="bname" class="form-label">Country :</label>
+                <select class="form-select" id="select">
+                    <option selected>None</option>
+                    <option value="Australia">Australia</option>
+                    <option value="UK">UK</option>
+                    <option value="USA">USA</option>
+                </select>
+            </div>
+        </form>
+        <!-- Buyer form ends here -->
 
         <!-- product will dynamically added from the js part -->
 
-         <!-- commented section code -->
+        <!-- commented section code -->
         <!-- product form starts from here -->
         <!-- <div class="product">
             <div class="form-group mb-3 ">
@@ -73,7 +73,7 @@
 
     <div class="container">
         <!-- product starts from here -->
-        <div class="product" id="product">
+        <div class="products" id="products">
         </div>
         <!-- product ends here -->
     </div>
@@ -83,6 +83,36 @@
     <div class="container d-flex mt-3">
         <button type="submit" class="btn btn-secondary m-1" id="addition">+</button>
         <button type="submit" class="btn btn-success m-1" id="submission">Submit</button>
+    </div>
+
+    <div class="border p-3 mb-3 product d-none">
+        <div class="d-flex justify-content-end">
+            <button type="button" class="btn-close bg-danger text-light" aria-label="Close"></button>
+        </div>
+        <div class="mb-3">
+            <label class="mb-2">Product Name : </label>
+            <input type="text" class="form-control p_name">
+        </div>
+        <div class="mb-3">
+            <label class="mb-2">Description : </label>
+            <textarea class="form-control p_description" rows="3"></textarea>
+        </div>
+        <div class="mb-3">
+            <label class="mb-2">Quantity : </label>
+            <input type="number" class="form-control p_quantity">
+        </div>
+        <div class="mb-3">
+            <label class="mb-2">Price : </label>
+            <input type="number" class="form-control p_price">
+        </div>
+        <div class="mb-3">
+            <label class="mb-2">Rate : </label>
+            <input type="number" class="form-control p_rate">
+        </div>
+        <div class="mb-3">
+            <label class="mb-2">Amount : </label>
+            <input type="number" class="form-control p_amount">
+        </div>
     </div>
 
 
