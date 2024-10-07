@@ -1,46 +1,50 @@
 console.log("Javascript file added");
 
  var submit = document.getElementById("submission");
+ console.log(typeof(submit))
  var add  = document.getElementById("addition");
-//  var close = document.getElementById("close");
+ console.log(typeof(add))
+ 
+ var product =  document.getElementById("product");
+ console.log(typeof(product))
+ console.log(product)
 
 // show product div
 add.addEventListener( "click",()=>{
  
-  const showProduct = document.getElementById("product");
-  const newDiv = document.createElement("div");
-
+   var showProduct = document.getElementById("product");
+   var newDiv = document.createElement("div");
+   
    newDiv.innerHTML =  `
-            <div class="border p-3 mb-3 ">
+            <div class="border p-3 mb-3 product">
               <div class="d-flex justify-content-end" >
                <button type="button" class="btn-close bg-danger text-light" aria-label="Close"></button>
               </div> 
                <div class="mb-3">
                   <label class="mb-2">Product Name : </label>
-                  <input type="text" class="form-control" id="pname">
+                  <input type="text" class="form-control p_name">
               </div>
               <div class="mb-3">
                   <label class="mb-2">Description : </label>
-                  <textarea class="form-control" id="description" rows="3"></textarea>
+                  <textarea class="form-control p_description" rows="3"></textarea>
               </div>
               <div class="mb-3">
                   <label class="mb-2">Quantity : </label>
-                  <input type="number" class="form-control" id="quantity">
+                  <input type="number" class="form-control p_quantity">
               </div>
               <div class="mb-3">
                   <label class="mb-2">Price : </label>
-                  <input type="number" class="form-control" id="price">
+                  <input type="number" class="form-control p_price">
               </div>
               <div class="mb-3">
                   <label class="mb-2">Rate : </label>
-                  <input type="number" class="form-control" id="rate">
+                  <input type="number" class="form-control p_rate">
               </div>
               <div class="mb-3">
                   <label class="mb-2">Amount : </label>
-                  <input type="number" class="form-control" id="amount">
+                  <input type="number" class="form-control p_amount">
               </div>
-            </div>
-            `;
+            </div>`;
 
    showProduct.appendChild(newDiv);
 
@@ -57,6 +61,7 @@ add.addEventListener( "click",()=>{
 submit.addEventListener("click", () => {
 
   // var buyer = [];
+  
 
   var product = [];
 
@@ -72,35 +77,41 @@ submit.addEventListener("click", () => {
 
   console.log(buyerDetails);
 
-  var productName = document.getElementById("pname").value;
-  var description = document.getElementById("description").value;
-  var quantity = document.getElementById("quantity").value;
-  var price = document.getElementById("price").value;
-  var rate = document.getElementById("rate").value;
-  var amount = document.getElementById("amount").value;
 
-  var productDetails = {
-    "Product's name": productName,
-    "Description": description,
-    "Quantity": quantity,
-    "Price": price,
-    "Rate": rate,
-    "Amount": amount
+  var productInfo = document.querySelectorAll(".product");
+  console.log("Product Information: ", productInfo);
+
+  for (var i = 1; i < productInfo.length; i++) {
+      var productName = productInfo[i].querySelector(".p_name").value;
+      var description = productInfo[i].querySelector(".p_description").value;
+      var quantity = parseFloat(productInfo[i].querySelector(".p_quantity").value);
+      var price = parseFloat(productInfo[i].querySelector(".p_price").value);
+      var rate = parseFloat(productInfo[i].querySelector(".p_rate").value);
+      var amount = parseFloat(productInfo[i].querySelector(".p_amount").value);
+
+      if(productName ==="" || description === "" || quantity === "" || price === "" || rate === "" || amount === "" ){
+        alert("Field is Empty !!!");
+      }
+
+      else
+      {
+        var productDetails = {
+          "Product's name": productName,
+          "Description": description,
+          "Quantity": quantity,
+          "Price": price,
+          "Rate": rate,
+          "Amount": amount
+      };
+
+      }
+      product.push(productDetails);
   }
   
-  product.push(productDetails);
   console.log(product);
 })
 
 
-//close button 
-// close.addEventListener("click",()=>{
-//   console.log("close button has been clicked");
 
-// })
-
-function close(){
-  console.log("close button has been clicked");
-}
 
 
