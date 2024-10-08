@@ -12,6 +12,7 @@ console.log("Javascript file added");
 // show product div
 add.addEventListener( "click",()=>{
  
+
   var showProduct = document.getElementById("products");
   var productTemplate = document.querySelector(".product.d-none").cloneNode(true);
   productTemplate.classList.remove("d-none");
@@ -46,7 +47,7 @@ submit.addEventListener("click", () => {
   }
 
   console.log(buyerDetails);
-
+  
   var productInfo = document.querySelectorAll(".product.d-block");
   console.log("Product Information: ", productInfo);
   console.log("Product Information: ", productInfo);
