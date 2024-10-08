@@ -12,51 +12,20 @@ console.log("Javascript file added");
 // show product div
 add.addEventListener( "click",()=>{
  
-   var showProduct = document.getElementById("products");
-   var productTemplate = document.querySelector(".product.d-none").cloneNode(true);
-   productTemplate.classList.remove("d-none");
-   productTemplate.classList.add("d-block");
-   var newDiv = document.createElement("div");
+
+  var showProduct = document.getElementById("products");
+  var productTemplate = document.querySelector(".product.d-none").cloneNode(true);
+  productTemplate.classList.remove("d-none");
+  productTemplate.classList.add("d-block");
    
-   newDiv.innerHTML =  `
-            <div class="border p-3 mb-3 product">
-              <div class="d-flex justify-content-end" >
-               <button type="button" class="btn-close bg-danger text-light" aria-label="Close"></button>
-              </div> 
-               <div class="mb-3">
-                  <label class="mb-2">Product Name : </label>
-                  <input type="text" class="form-control p_name">
-              </div>
-              <div class="mb-3">
-                  <label class="mb-2">Description : </label>
-                  <textarea class="form-control p_description" rows="3"></textarea>
-              </div>
-              <div class="mb-3">
-                  <label class="mb-2">Quantity : </label>
-                  <input type="number" class="form-control p_quantity">
-              </div>
-              <div class="mb-3">
-                  <label class="mb-2">Price : </label>
-                  <input type="number" class="form-control p_price">
-              </div>
-              <div class="mb-3">
-                  <label class="mb-2">Rate : </label>
-                  <input type="number" class="form-control p_rate">
-              </div>
-              <div class="mb-3">
-                  <label class="mb-2">Amount : </label>
-                  <input type="number" class="form-control p_amount">
-              </div>
-            </div>`;
+  
 
-  //  showProduct.appendChild(newDiv);
-   showProduct.appendChild(productTemplate);
+  showProduct.appendChild(productTemplate);
 
-   const close = productTemplate.querySelector(".btn-close");
+  const close = productTemplate.querySelector(".btn-close");
 
    close.addEventListener("click",()=>{
-    productTemplate.remove();
-
+     productTemplate.remove();
    });
 
 });
@@ -64,10 +33,8 @@ add.addEventListener( "click",()=>{
 // submit button on click event listener
 submit.addEventListener("click", () => {
 
-  // var buyer = [];
-  
-
-  var product = [];
+  // var buyer = []; 
+  var products = [];
 
   var buyerName = document.getElementById("buyer_name").value;
   var buyerPhone = document.getElementById("buyer_phone").value;
@@ -80,39 +47,33 @@ submit.addEventListener("click", () => {
   }
 
   console.log(buyerDetails);
-
-
+  
   var productInfo = document.querySelectorAll(".product.d-block");
   console.log("Product Information: ", productInfo);
+  console.log("Product Information: ", productInfo);
+  console.log("Product Information type : ", productInfo.length);
 
-  for (var i = 1; i < productInfo.length; i++) {
-      var productName = productInfo[i].querySelector(".p_name").value;
-      var description = productInfo[i].querySelector(".p_description").value;
-      var quantity = parseFloat(productInfo[i].querySelector(".p_quantity").value);
-      var price = parseFloat(productInfo[i].querySelector(".p_price").value);
-      var rate = parseFloat(productInfo[i].querySelector(".p_rate").value);
-      var amount = parseFloat(productInfo[i].querySelector(".p_amount").value);
+  for (var i = 0; i < productInfo.length; i++) {
+      var productName = productInfo[i].querySelector(".p-name").value;
+      var description = productInfo[i].querySelector(".p-description").value;
+      var quantity = parseFloat(productInfo[i].querySelector(".p-quantity").value);
+      var price = parseFloat(productInfo[i].querySelector(".p-price").value);
+      var rate = parseFloat(productInfo[i].querySelector(".p-rate").value);
+      var amount = parseFloat(productInfo[i].querySelector(".p-amount").value);
 
-      if(productName ==="" || description === "" || quantity === "" || price === "" || rate === "" || amount === "" ){
-        alert("Field is Empty !!!");
-      }
+          var productDetails = {
+            "Product's name": productName,
+            "Description": description,
+            "Quantity": quantity,
+            "Price": price,
+            "Rate": rate,
+            "Amount": amount
+        };
 
-      else
-      {
-        var productDetails = {
-          "Product's name": productName,
-          "Description": description,
-          "Quantity": quantity,
-          "Price": price,
-          "Rate": rate,
-          "Amount": amount
-      };
-
-      }
-      product.push(productDetails);
+    products.push(productDetails);
   }
   
-  console.log(product);
+  console.log(products);
 })
 
 
