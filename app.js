@@ -35,6 +35,7 @@ submit.addEventListener("click", () => {
 
   // var buyer = []; 
   var products = [];
+  var productJson ;
 
   var buyerName = document.getElementById("buyer_name").value;
   var buyerPhone = document.getElementById("buyer_phone").value;
@@ -60,7 +61,7 @@ submit.addEventListener("click", () => {
       var price = parseFloat(productInfo[i].querySelector(".p-price").value);
       var rate = parseFloat(productInfo[i].querySelector(".p-rate").value);
       var amount = parseFloat(productInfo[i].querySelector(".p-amount").value);
-
+     
           var productDetails = {
             "Product's name": productName,
             "Description": description,
@@ -73,7 +74,12 @@ submit.addEventListener("click", () => {
     products.push(productDetails);
   }
   
-  console.log(products);
+  productJson = JSON.stringify(products);
+
+  console.log(productJson);
+
+  var display = document.querySelector(".Json-display");
+  display.innerHTML = productJson + "<br>";
 })
 
 
