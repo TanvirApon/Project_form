@@ -1,8 +1,7 @@
  var submit = document.getElementById("submission");
  var add  = document.getElementById("addition");
  var product =  document.getElementById("product");
-
-
+ 
 add.addEventListener( "click",()=>{
   var showProduct = document.getElementById("products");
   var productTemplate = document.querySelector(".product.d-none").cloneNode(true);
@@ -17,7 +16,6 @@ add.addEventListener( "click",()=>{
 
 });
 
-
 submit.addEventListener("click", () => {
   var products = [];
   var productJson ;
@@ -31,7 +29,7 @@ submit.addEventListener("click", () => {
   }
   console.log(buyerDetails);
   var productInfo = document.querySelectorAll(".product.d-block");
-  
+
   for (var i = 0; i < productInfo.length; i++) {
       var productName = productInfo[i].querySelector(".p-name").value;
       var description = productInfo[i].querySelector(".p-description").value;
@@ -49,14 +47,12 @@ submit.addEventListener("click", () => {
         };
     products.push(productDetails);
   }
-  productJson = JSON.stringify(products);
+  productJson = JSON.stringify(products,null," ");
   console.log(productJson);
   
   var display = document.querySelector(".Json-display");
   display.innerHTML = productJson;
 })
-
-
 
 
 
