@@ -2,7 +2,7 @@
  var add  = document.getElementById("addition");
  var product =  document.getElementById("product");
 
-// show product div
+
 add.addEventListener( "click",()=>{
   var showProduct = document.getElementById("products");
   var productTemplate = document.querySelector(".product.d-none").cloneNode(true);
@@ -17,7 +17,7 @@ add.addEventListener( "click",()=>{
 
 });
 
-// submit button on click event listener
+
 submit.addEventListener("click", () => {
   var products = [];
   var productJson ;
@@ -31,10 +31,7 @@ submit.addEventListener("click", () => {
   }
   console.log(buyerDetails);
   var productInfo = document.querySelectorAll(".product.d-block");
-  console.log("Product Information: ", productInfo);
-  console.log("Product Information: ", productInfo);
-  console.log("Product Information type : ", productInfo.length);
-
+  
   for (var i = 0; i < productInfo.length; i++) {
       var productName = productInfo[i].querySelector(".p-name").value;
       var description = productInfo[i].querySelector(".p-description").value;
